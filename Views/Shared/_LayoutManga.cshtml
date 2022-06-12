@@ -1,0 +1,457 @@
+﻿@{ Layout = null; }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="shortcut icon" href="~/images/Logo.jpg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width" />
+    <title>Website Manga - Thiên Đường Truyện Tranh</title>
+    <link href="~/assets/css/Style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--
+      - HEADER
+    -->
+
+    <header>
+
+        <div class="header-top">
+
+            <div class="container">
+
+                <ul class="header-social-container">
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="header-alert-news">
+                    <p>
+                        <b>MangaWorld-</b>
+                        Thiên Đường Truyện Tranh
+                    </p>
+                </div>
+
+                <div class="header-top-actions">
+
+                    <select name="language">
+
+                        <option value="en-US">English</option>
+                        <option value="es-ES">Vietnamese</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="header-main">
+
+            <div class="container">
+
+                <a href="#" class="header-logo">
+                    <img src="~/images/Logo.jpg"
+                         alt="MangaWorld-logo" width="50" height="40">
+                </a>
+
+                <div class="header-search-container">
+
+                    <input type="search" name="search" class="search-field" placeholder="Tìm Truyện...">
+
+                    <button class="search-btn">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+
+                </div>
+
+                <div class="header-user-actions">
+
+                    <button class="action-btn">
+                        <ion-icon name="home"></ion-icon>
+                    </button>
+
+                    <button class="action-btn">
+                        <ion-icon name="heart"></ion-icon>
+                        <span class="count">0</span>
+                    </button>
+
+                    <button class="action-btn">
+                        <ion-icon name="pricetags"></ion-icon>
+                        <span class="count">0</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <nav class="desktop-navigation-menu">
+
+            <div class="container">
+
+                <ul class="desktop-menu-category-list">
+
+                    <li class="menu-category">
+                        <a href="#" class="menu-title">Home</a>
+                    </li>
+
+                    <li class="menu-category">
+                        <a href="#" class="menu-title">Thể Loại</a>
+
+                        <div class="dropdown-panel">
+
+                            <ul class="dropdown-panel-list">
+                                <li class="menu-title">
+                                    <a href="#">Nổi Bật</a>
+                                </li>
+
+                                <li class="panel-list-item">
+                                    <a title="Thể loại này thường có nội dung về đánh nhau, bạo lực, hỗn loạn, với diễn biến nhanh " href="#" target="_self">Action</a>
+                                </li>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Thể loại phiêu lưu, mạo hiểm, thường là hành trình của các nhân vật" href="#" target="_self">Adventure</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Thể loại này là những câu chuyện về người ở một thế giới này xuyên đến một thế giới khác, có thể là thế giới mang phong cách trung cổ với kiếm sĩ và ma thuật, hay thế giới trong game, hoặc có thể là bạn chết ở nơi này và được chuyển sinh đến nơi khác" href="#" target="_self">Chuyển Sinh</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Thể loại có nội dung trong sáng và cảm động, thường có các tình tiết gây cười, các xung đột nhẹ nhàng" href="#" target="_self">Comedy</a>
+                    </li>
+                    <li class="panel-list-item">
+                        <a title="Thể loại mang đến cho người xem những cảm xúc khác nhau: buồn bã, căng thẳng thậm chí là bi phẫn" href="#" target="_self">Drama</a>
+                    </li>
+                    <li class="panel-list-item">
+                        <a title="Truyện đã được chuyển thể thành film Anime" href="#" target="_self">Anime</a>
+                    </li>
+                </ul>
+
+                <ul class="dropdown-panel-list">
+
+                    <li class="menu-title">
+                        <a href="#">Yêu Thích</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Thể loại xuất phát từ trí tưởng tượng phong phú, từ pháp thuật đến thế giới trong mơ thậm chí là những câu chuyện thần tiên" href="#" target="_self">Fantasy</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Rùng rợn, nghe cái tên là bạn đã hiểu thể loại này có nội dung thế nào. Nó làm cho bạn kinh hãi, khiếp sợ, ghê tởm, run rẩy, có thể gây sock - một thể loại không dành cho người yếu tim" href="#" target="_self">Horror</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Truyện tranh của Nhật Bản" href="#" target="_self">Manga</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Thể loại truyện tình cảm, lãng mạn mà trong đó, nhiều nhân vật nữ thích một nam nhân vật chính" href="#" target="_self">Harem</a>
+                    </li>
+                    <li class="panel-list-item">
+                        <a title="Thể loại có liên quan đến thời xa xưa" href="#" target="_self">Historical</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Truyện tranh của Trung Quốc" href="#" target="_self">Manhua</a>
+                    </li>
+
+                </ul>
+
+                <ul class="dropdown-panel-list">
+
+                    <li class="menu-title">
+                        <a href="#">Mới</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Thể loại thường xuất hiện những điều bí ấn không thể lí giải được và sau đó là những nỗ lực của nhân vật chính nhằm tìm ra câu trả lời thỏa đáng" href="#" target="_self">Mystery</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Truyện thuộc kiểu lãng mạn, kể về những sự kiện vui buồn trong tình yêu của nhân vật chính." href="#" target="_self">Ngôn Tình</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Thường là những câu chuyện về tình yêu, tình cảm lãng mạn. Ớ đây chúng ta sẽ lấy ví dụ như tình yêu giữa một người con trai và con gái, bên cạnh đó đặc điểm thể loại này là kích thích trí tưởng tượng của bạn về tình yêu" href="#" target="_self">Tình Cảm</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Trong thể loại này, ngữ cảnh diễn biến câu chuyện chủ yếu ở trường học" href="#" target="_self">School Life</a>
+                    </li>
+                    <li class="panel-list-item">
+                        <a title="Mecha, còn được biết đến dưới cái tên meka hay mechs, là thể loại nói tới những cỗ máy biết đi (thường là do phi công cầm lái)" href="#" target="_self">Mecha</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Những truyện ngắn, thường là 1 chapter" href="#" target="_self">One Shot</a>
+                    </li>
+
+                </ul>
+
+                <ul class="dropdown-panel-list">
+
+                    <li class="menu-title">
+                        <a href="#">Khác</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Nói về cuộc sống đời thường" href="#" target="_self">Slice of Life</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="môn thể thao như bóng đá, bóng chày, bóng chuyền, đua xe, cầu lông,... là một phần của thể loại này" href="#" target="_self">Sports</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Thể loại chứa đựng những sự kiện mà dẫn đến kết cục là những mất mát hay sự rủi ro to lớn" href="#" target="_self">Tragedy</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Các truyện có nội dung về các vụ án, các thám tử cảnh sát điều tra..." href="#" target="_self">Trinh Thám</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a title="Tổng hợp truyện tranh màu, rõ, đẹp" href="#" target="_self">Truyện Màu</a>
+                    </li>
+                    <li class="panel-list-item">
+                        <a title="Xuyên Không, Xuyên Việt là thể loại nhân vật chính vì một lý do nào đó mà bị đưa đến sinh sống ở một không gian hay một khoảng thời gian khác. Nhân vật chính có thể trực tiếp xuyên qua bằng thân xác mình hoặc sống lại bằng thân xác người khác." href="#" target="_self">Xuyên Không</a>
+                    </li>
+
+                </ul>
+
+            </div>
+            </li>
+            <li class="menu-category">
+                <a href="#" class="menu-title">Hot</a>
+            </li>
+            <li class="menu-category">
+                <a href="#" class="menu-title">Theo Dõi</a>
+            </li>
+
+            <li class="menu-category">
+                <a href="#" class="menu-title">Lịch Sử</a>
+            </li>
+
+            <li class="menu-category">
+                <a href="#" class="menu-title">Xếp Hạng</a>
+
+                <ul class="dropdown-list">
+
+                    <li class="dropdown-item">
+                        <a href="#">Top all</a>
+                    </li>
+
+                    <li class="dropdown-item">
+                        <a href="#">Top Tháng</a>
+                    </li>
+
+                    <li class="dropdown-item">
+                        <a href="#">Top Tuần</a>
+                    </li>
+
+                    <li class="dropdown-item">
+                        <a href="#">Top Ngày</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="menu-category">
+                <a href="#" class="menu-title">Tìm Truyện</a>
+            </li>
+
+            <li class="menu-category">
+                <a href="#" class="menu-title">Thông Tin</a>
+
+                <ul class="dropdown-list">
+
+                    <li class="dropdown-item">
+                        <a href="/Auth/Login">Đăng Nhập</a>
+                    </li>
+
+                    <li class="dropdown-item">
+                        <a href="/Auth/Registration">Đăng Ký</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="menu-category">
+                <a href="#" class="menu-title">Page</a>
+            </li>
+
+            </ul>
+
+            </div>
+
+        </nav>
+
+        <main>
+
+            <!--
+              - BANNER
+            -->
+
+            <div class="banner">
+
+                <div class="container">
+
+                    <div class="slider-container has-scrollbar">
+
+                        <div class="slider-item">
+                            <img src="~/images/hình.jpg" class="banner-img">
+
+                            <div class="banner-content">
+
+                                <h2 class="banner-title">Fairy Tail</h2>
+                                <a href="#" class="banner-btn">Đọc Ngay</a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="slider-item">
+                            <img src="~/images/hinh 2.jpg" class="banner-img">
+
+
+                            <div class="banner-content">
+
+                                <h2 class="banner-title">Conan - thám tử lừng danh</h2>
+                                <a href="#" class="banner-btn">Đọc Ngay</a>
+
+                            </div>
+
+                        </div>
+                        <div class="slider-item">
+                            <img src="~/images/hinh5.jpg" class="banner-img">
+
+                            <div class="banner-content">
+
+                                <h2 class="banner-title">Naruto</h2>
+                                <a href="#" class="banner-btn">Đọc Ngay</a>
+
+                            </div>
+
+                        </div>
+                        <div class="slider-item">
+                            <img src="~/images/hinh6.jpg"
+                                 class="banner-img">
+
+                            <div class="banner-content">
+
+                                <h2 class="banner-title">One Piece</h2>
+                                <a href="#" class="banner-btn">Đọc Ngay</a>
+
+                            </div>
+
+                        </div>
+                        <div class="slider-item">
+                            <img src="~/images/7hinh.jpg"
+                                 class="banner-img">
+
+                            <div class="banner-content">
+
+                                <h2 class="banner-title">Doraemon</h2>
+                                <a href="#" class="banner-btn">Đọc Ngay</a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            </div>
+            <div 
+                 @RenderBody()
+                </div>
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <p class="lead">Thể Loại</p>
+                        @Html.Action("Theloai", "Body")
+
+                        <p class="lead">Tình Trạng</p>
+                        @Html.Action("Tinhtrang", "Body")
+
+                    </div>
+              </div>
+
+                        </div>
+
+            <!-- /.container -->
+
+            <div class="container">
+
+                <hr>
+
+                <!-- Footer -->
+                <footer>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>Copyright &copy; by Hoàng Đăng Huy &reg; 2022</p>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- /.container -->
+            <!-- jQuery -->
+            <script src="~/Scripts/jquery.js"></script>
+            <!-- Bootstrap Core JavaScript -->
+            <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+<!--
+  - custom js link
+-->
+<script src="./assets/js/script.js"></script>
+
+<!--
+  - ionicon link
+-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</body>
+</html>

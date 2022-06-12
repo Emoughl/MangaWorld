@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Manga" Class="MangaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-2S0CP2JK\SQLEXPRESS01;Initial Catalog=Manga;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MangaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CHAP" Member="CHAPs">
+    <Type Name="CHAP">
+      <Column Name="MaChap" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChuongSo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenTruyen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaTruyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Anhbia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="CHAP_HINHANH" Member="HINHANHs" ThisKey="MaChap" OtherKey="MaChap" Type="HINHANH" />
+      <Association Name="TRUYEN_CHAP" Member="TRUYEN" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="TRUYEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HINHANH" Member="HINHANHs">
+    <Type Name="HINHANH">
+      <Column Name="MaHinhAnh" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaChap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChuongSo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenTruyen" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MaTruyen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="CHAP_HINHANH" Member="CHAP" ThisKey="MaChap" OtherKey="MaChap" Type="CHAP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THELOAI" Member="THELOAIs">
+    <Type Name="THELOAI">
+      <Column Name="MaTL" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTL" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="THELOAI_TRUYEN" Member="TRUYENs" ThisKey="MaTL" OtherKey="MaTL" Type="TRUYEN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TINHTRANG" Member="TINHTRANGs">
+    <Type Name="TINHTRANG">
+      <Column Name="MaTinhTrang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTinhTrang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TINHTRANG_TRUYEN" Member="TRUYENs" ThisKey="MaTinhTrang" OtherKey="MaTinhtrang" Type="TRUYEN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[USER]" Member="USERs">
+    <Type Name="USER">
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Taikhoan" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Matkhau" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ngaysinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRUYEN" Member="TRUYENs">
+    <Type Name="TRUYEN">
+      <Column Name="MaTruyen" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTruyen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mota" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Anhbia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NgayCapNhat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaTL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaTinhtrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TRUYEN_CHAP" Member="CHAPs" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="CHAP" />
+      <Association Name="THELOAI_TRUYEN" Member="THELOAI" ThisKey="MaTL" OtherKey="MaTL" Type="THELOAI" IsForeignKey="true" />
+      <Association Name="TINHTRANG_TRUYEN" Member="TINHTRANG" ThisKey="MaTinhtrang" OtherKey="MaTinhTrang" Type="TINHTRANG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HuyAdmin" Member="HuyAdmins">
+    <Type Name="HuyAdmin">
+      <Column Name="UserAdmin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PassAdmin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hoten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
