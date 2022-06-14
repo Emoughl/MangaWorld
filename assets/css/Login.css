@@ -106,3 +106,7 @@ input:focus {
         font-size: 12px;
         text-decoration: underline;
     }
+    .login_btn
+    {
+        display: inline;
+    }

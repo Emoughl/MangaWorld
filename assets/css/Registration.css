@@ -131,3 +131,8 @@ input:focus {
         margin-left: 10px;
         margin-right: 10px;
     }
+.tb {
+    position: absolute;
+    right: -100%;
+    color :aliceblue;
+}
