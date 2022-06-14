@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Truyentheotinhtrang";
+    Layout = "~/Views/Shared/_LayoutManga.cshtml";
+}
+
+<h2>TRUYỆN THEO TÌNH TRẠNG</h2>
+
+
+<div class="row">
+    @foreach (var truyen in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <a href="@Url.Action("Chitiettruyen", "Body", new { id = truyen.MaTruyen})">
+                    <img alt="@truyen.TenTruyen" src="~/Manga/@truyen.Anhbia" width="200" />
+                    <div>
+                        <br />
+                        <h4 style="text-align:center">
+                            @truyen.TenTruyen
+                        </h4>
+                        <p></p>
+                    </div>
+            </div>
+        </div>
+    }
+</div>
+

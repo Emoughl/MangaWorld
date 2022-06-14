@@ -25,7 +25,7 @@ namespace MangaWorld.Controllers
             if (String.IsNullOrEmpty(tendn))
                 ViewData["Loi1"] = "Vui lòng nhập tên đăng nhập";
             else if (String.IsNullOrEmpty(matkhau))
-                ViewData["Loi2"] = "Vui lo2nh nhập mật khẩu";
+                ViewData["Loi2"] = "Vui lòng nhập mật khẩu";
             else
             {
                 var us = db.USERs.SingleOrDefault(n => n.Taikhoan == tendn && n.Matkhau == matkhau);
@@ -55,7 +55,7 @@ namespace MangaWorld.Controllers
             var dienthoai = collection["Dienthoai"];
             var email = collection["Email"];
             var gender = String.Format("MALE,FEMALE", collection["gender"]);
-            var ngaysinh = String.Format("{0:MM/dd/yyyy}", collection["Ngaysinh"]);
+            var ngaysinh = String.Format("{0:MM/dd/yyyy}", collection["birthday"]);
             if (String.IsNullOrEmpty(tendn))
             {
                 ViewData["Loi1"] = "Hãy nhập tên đăng nhập";
@@ -75,7 +75,7 @@ namespace MangaWorld.Controllers
 
             else if (String.IsNullOrEmpty(dienthoai))
             {
-                ViewData["Loi4"] = "Hãy nhập nhập điện thoai";
+                ViewData["Loi4"] = "Hãy nhập điện thoai";
             }
             else
             {

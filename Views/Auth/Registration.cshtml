@@ -38,48 +38,50 @@
                     <div class="card-body">
                         <form method="POST" action="/Auth/ProcessRegistration">
                             <div class="input-group form-group">
+                                <div class="tb" @ViewData["Loi1"]>
                                 <input type="text" class="form-control" name="TenDN" placeholder="Tên đăng nhập của bạn">
-                                @ViewData["Loi1"]
+
 
                             </div>
-                            <div class="input-group form-group">
-                                <input type="password" class="form-control" name="Matkhau" placeholder="Mật khẩu của bạn">
-                                @ViewData["Loi2"]
-                            </div>
-                            <div class="input-group form-group">
-                                <input type="password" class="form-control" name="Matkhaunhaplai" placeholder=" Nhập lại mật khẩu của bạn">
-                                @ViewData["Loi3"]
-                            </div>
-                            <div class="input-group form-group">
-                                <input type="text" class="form-control" name="Dienthoai" placeholder="Số điện thoại">
-                                @ViewData["Loi4"]
+                                <div class="input-group form-group">
+                                    <div class="tb" @ViewData["Loi2"]>
+                                        <input type="password" class="form-control" name="Matkhau" placeholder="Mật khẩu của bạn">
+                                   
+                                    </div>
+                                    <div class="input-group form-group">
+                                        <div class="tb" @ViewData["Loi3"]>
+                                            <input type="password" class="form-control" name="Matkhaunhaplai" placeholder=" Nhập lại mật khẩu của bạn">
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <div class="tb" @ViewData["Loi4"]>
+                                                <input type="text" class="form-control" name="Dienthoai" placeholder="Số điện thoại">
 
-                            </div>
-                            <div class="input-group form-group">
-                                <input type="text" class="form-control" name="Email" placeholder="Email của bạn">
-                                @ViewData["Loi5"]
+                                            </div>
+                                            <div class="input-group form-group">
+                                                <div class="tb" @ViewData["Loi5"]>
+                                                    <input type="text" class="form-control" name="Email" placeholder="Email của bạn">
 
-                            </div>
-                            <div class="input-group form-group gender">
-                                Giới tính:
-                                <label>
-                                    <input type="radio" name="gender" value="MALE">
-                                    Nam
-                                </label>
-                                <label>
-                                    <input type="radio" name="gender" value="FEMALE">
-                                    Nữ
-                                </label>
-                            </div>
-                            <div class="input-group form-group birthday">
+                                                </div>
+                                                <div class="input-group form-group gender">
+                                                    Giới tính:
+                                                    <label>
+                                                        <input type="radio" name="gender" value="MALE">
+                                                        Nam
+                                                    </label>
+                                                    <label>
+                                                        <input type="radio" name="gender" value="FEMALE">
+                                                        Nữ
+                                                    </label>
+                                                </div>
+                                                <div class="input-group form-group birthday">
 
-                                Birthday:
-                                <input type="date" name="birthday">
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" value="Đăng Ký" class="btn float-right login_btn">
-                            </div>
-                        </form>
+                                                    Birthday:
+                                                    <input type="date" name="birthday">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="submit" value="Đăng Ký" class="btn float-right login_btn">
+                                                </div>
+</form>
                     </div>
                 }
                 <div class="card-footer">

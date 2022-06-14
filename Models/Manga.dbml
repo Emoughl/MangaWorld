@@ -38,7 +38,6 @@
   <Table Name="dbo.[USER]" Member="USERs">
     <Type Name="USER">
       <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Taikhoan" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Matkhau" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />

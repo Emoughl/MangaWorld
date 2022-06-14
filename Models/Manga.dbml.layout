@@ -14,7 +14,7 @@
         <elementListCompartment Id="e6b1b94d-2569-4866-83e8-e5ca1ceb12e1" absoluteBounds="8.64, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.625 : 1.38544840494792); (8.625 : 1.38544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.625 : 1.38544840494792); (8.625 : 1.38544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MangaDataContext/CHAP/CHAP_HINHANH" />
       <nodes>
         <classShapeMoniker Id="0719e710-f56e-4012-af0a-db62bfd19c8b" />
@@ -33,10 +33,10 @@
         <elementListCompartment Id="803e277a-c9a3-4ab5-9913-0f9c8318d5b2" absoluteBounds="0.64000000000000012, 3.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="66902f56-8e00-4c77-8688-2da7176d768c" absoluteBounds="0.625, 0.625, 2, 2.1554996744791666">
+    <classShape Id="66902f56-8e00-4c77-8688-2da7176d768c" absoluteBounds="0.625, 0.625, 2, 1.9631982421875">
       <DataClassMoniker Name="/MangaDataContext/USER" />
       <nestedChildShapes>
-        <elementListCompartment Id="7a9ef77e-9d34-4a3a-b3f9-7408c184ec17" absoluteBounds="0.63999999999999968, 1.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7a9ef77e-9d34-4a3a-b3f9-7408c184ec17" absoluteBounds="0.63999999999999968, 1.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="8e016acf-7183-4146-be03-59ac789270f5" absoluteBounds="9.375, 2.5, 2, 2.1554996744791666">
@@ -45,14 +45,14 @@
         <elementListCompartment Id="c4d7b15d-546b-4938-9b82-596aa5b3e291" absoluteBounds="9.39, 2.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(9.375 : 3.22319411458333); (6.65625 : 3.22319411458333); (6.65625 : 2.27089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.375 : 3.22319411458333); (6.65625 : 3.22319411458333); (6.65625 : 2.27089680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MangaDataContext/TRUYEN/TRUYEN_CHAP" />
       <nodes>
         <classShapeMoniker Id="8e016acf-7183-4146-be03-59ac789270f5" />
         <classShapeMoniker Id="0719e710-f56e-4012-af0a-db62bfd19c8b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.625 : 4.00889322916667); (9.375 : 4.00889322916667)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.625 : 4.00889322916667); (9.375 : 4.00889322916667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MangaDataContext/THELOAI/THELOAI_TRUYEN" />
       <nodes>
         <classShapeMoniker Id="ba780e64-ae27-4790-a8d3-73543a49bd28" />

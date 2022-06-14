@@ -46,6 +46,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -136,6 +142,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\Registration.css" />
     <Content Include="assets\css\Login.css" />
     <Content Include="assets\css\Style.css" />
@@ -143,6 +150,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -155,6 +163,11 @@
     <Content Include="images\hinh6.jpg" />
     <Content Include="images\hình.jpg" />
     <Content Include="images\Logo.png" />
+    <Content Include="Manga\ban-trai-ve-si.jpg" />
+    <Content Include="Manga\khong-co-dao-lu-se-chet.jpg" />
+    <Content Include="Manga\kiem-tu-imba-nhat-qua-dat.jpg" />
+    <Content Include="Manga\nam-nhan-den-tu-dia-nguc.jpg" />
+    <Content Include="Manga\vo-tan-thon-phe.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Models\Manga.dbml">
@@ -194,9 +207,14 @@
     <Content Include="Views\Auth\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutManga.cshtml" />
     <Content Include="Views\Auth\Index.cshtml" />
-    <Content Include="Views\Body\Theloai.cshtml" />
     <Content Include="Views\Body\Tinhtrang.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Body\Theloai.cshtml" />
+    <Content Include="Views\Body\Truyentheotheloai.cshtml" />
+    <Content Include="Views\Body\Index.cshtml" />
+    <Content Include="Views\Body\Truyentheotinhtrang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

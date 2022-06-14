@@ -799,8 +799,6 @@ namespace MangaWorld.Models
 		
 		private int _IdUser;
 		
-		private string _HoTen;
-		
 		private string _Taikhoan;
 		
 		private string _Matkhau;
@@ -817,8 +815,6 @@ namespace MangaWorld.Models
     partial void OnCreated();
     partial void OnIdUserChanging(int value);
     partial void OnIdUserChanged();
-    partial void OnHoTenChanging(string value);
-    partial void OnHoTenChanged();
     partial void OnTaikhoanChanging(string value);
     partial void OnTaikhoanChanged();
     partial void OnMatkhauChanging(string value);
@@ -852,26 +848,6 @@ namespace MangaWorld.Models
 					this._IdUser = value;
 					this.SendPropertyChanged("IdUser");
 					this.OnIdUserChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string HoTen
-		{
-			get
-			{
-				return this._HoTen;
-			}
-			set
-			{
-				if ((this._HoTen != value))
-				{
-					this.OnHoTenChanging(value);
-					this.SendPropertyChanging();
-					this._HoTen = value;
-					this.SendPropertyChanged("HoTen");
-					this.OnHoTenChanged();
 				}
 			}
 		}

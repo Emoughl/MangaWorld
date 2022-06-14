@@ -1,7 +1,7 @@
 ﻿<div class="list-group">
     @foreach (var tinhtrang in Model)
     {
-        <a href="@Url.Action("TinhTrangTruyen","Auth", new {id = tinhtrang.MaTinhTrang})" class="list-group-item"> @tinhtrang.TenTinhTrang</a>
+        <a href="@Url.Action("Truyentheotinhtrang","Body", new {id = tinhtrang.MaTinhTrang})" class="list-group-item"> @tinhtrang.TenTinhTrang</a>
 
     }
 </div>

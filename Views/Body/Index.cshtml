@@ -1,0 +1,46 @@
+﻿@using MangaWorld.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutManga.cshtml";
+}
+
+<h2>TRUYỆN MỚI CẬP NHẬT </h2>
+
+<div class="row">
+    @foreach (var truyen in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <a href="@Url.Action("Chitietsach", "Body", new { id = truyen.MaTruyen})">
+                    <img alt="@truyen.Tensach" src="~/Manga/@truyen.Anhbia" width="150" />
+                    <div>
+                        <br />
+                        <h4 style="text-align:center">
+                            @truyen.TenTruyen
+                        </h4>
+                        <p></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+</div>
+<div>
+    Trang @(Model.PageNumber>Model.PageCount?3:Model.PageNumber) /@Model.PageCount
+</div>
+<div class="Menutrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+
+<style>
+    .Menutran li {
+        display: inline
+    }
+</style>
+
+<style>
+    .Menutran li {
+        display: inline
+    }
+</style>
+
