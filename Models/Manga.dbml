@@ -8,7 +8,7 @@
       <Column Name="MaTruyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Anhbia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="CHAP_HINHANH" Member="HINHANHs" ThisKey="MaChap" OtherKey="MaChap" Type="HINHANH" />
-      <Association Name="TRUYEN_CHAP" Member="TRUYEN" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="TRUYEN" IsForeignKey="true" />
+      <Association Name="TRUYEN1_CHAP" Member="TRUYEN1" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="TRUYEN1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HINHANH" Member="HINHANHs">
@@ -25,14 +25,14 @@
     <Type Name="THELOAI">
       <Column Name="MaTL" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenTL" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="THELOAI_TRUYEN" Member="TRUYENs" ThisKey="MaTL" OtherKey="MaTL" Type="TRUYEN" />
+      <Association Name="THELOAI_TRUYEN1" Member="TRUYEN1s" ThisKey="MaTL" OtherKey="MaTL" Type="TRUYEN1" />
     </Type>
   </Table>
   <Table Name="dbo.TINHTRANG" Member="TINHTRANGs">
     <Type Name="TINHTRANG">
       <Column Name="MaTinhTrang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenTinhTrang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="TINHTRANG_TRUYEN" Member="TRUYENs" ThisKey="MaTinhTrang" OtherKey="MaTinhtrang" Type="TRUYEN" />
+      <Association Name="TINHTRANG_TRUYEN1" Member="TRUYEN1s" ThisKey="MaTinhTrang" OtherKey="MaTinhTrang" Type="TRUYEN1" />
     </Type>
   </Table>
   <Table Name="dbo.[USER]" Member="USERs">
@@ -45,25 +45,25 @@
       <Column Name="Ngaysinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TRUYEN" Member="TRUYENs">
-    <Type Name="TRUYEN">
-      <Column Name="MaTruyen" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenTruyen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Mota" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Anhbia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NgayCapNhat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MaTL" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaTinhtrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TRUYEN_CHAP" Member="CHAPs" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="CHAP" />
-      <Association Name="THELOAI_TRUYEN" Member="THELOAI" ThisKey="MaTL" OtherKey="MaTL" Type="THELOAI" IsForeignKey="true" />
-      <Association Name="TINHTRANG_TRUYEN" Member="TINHTRANG" ThisKey="MaTinhtrang" OtherKey="MaTinhTrang" Type="TINHTRANG" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.HuyAdmin" Member="HuyAdmins">
     <Type Name="HuyAdmin">
       <Column Name="UserAdmin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="PassAdmin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Hoten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRUYEN" Member="TRUYEN1s">
+    <Type Name="TRUYEN1">
+      <Column Name="MaTruyen" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTruyen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mota" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Anhbia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayCapNhat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaTL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaTinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TRUYEN1_CHAP" Member="CHAPs" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="CHAP" />
+      <Association Name="THELOAI_TRUYEN1" Member="THELOAI" ThisKey="MaTL" OtherKey="MaTL" Type="THELOAI" IsForeignKey="true" />
+      <Association Name="TINHTRANG_TRUYEN1" Member="TINHTRANG" ThisKey="MaTinhTrang" OtherKey="MaTinhTrang" Type="TINHTRANG" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

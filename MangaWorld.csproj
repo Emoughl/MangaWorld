@@ -155,6 +155,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\security.png" />
+    <Content Include="Manga\bat-dau-vung-day-tu-viec-choi-game-nghiem-tuc.jpg" />
+    <Content Include="Manga\dai-phung-da-canh-nhan.jpg" />
     <Content Include="images\Logo.jpg" />
     <Content Include="images\7hinh.jpg" />
     <Content Include="images\hinh 2.jpg" />
@@ -188,6 +191,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MangaKind.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
