@@ -45,9 +45,9 @@ namespace MangaWorld.Models
     partial void InsertUSER(USER instance);
     partial void UpdateUSER(USER instance);
     partial void DeleteUSER(USER instance);
-    partial void InsertTRUYEN1(TRUYEN1 instance);
-    partial void UpdateTRUYEN1(TRUYEN1 instance);
-    partial void DeleteTRUYEN1(TRUYEN1 instance);
+    partial void InsertTRUYEN(TRUYEN instance);
+    partial void UpdateTRUYEN(TRUYEN instance);
+    partial void DeleteTRUYEN(TRUYEN instance);
     #endregion
 		
 		public MangaDataContext() : 
@@ -128,11 +128,19 @@ namespace MangaWorld.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<TRUYEN1> TRUYEN1s
+		public System.Data.Linq.Table<MaMANGA> MaMANGAs
 		{
 			get
 			{
-				return this.GetTable<TRUYEN1>();
+				return this.GetTable<MaMANGA>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TRUYEN> TRUYENs
+		{
+			get
+			{
+				return this.GetTable<TRUYEN>();
 			}
 		}
 	}
@@ -155,8 +163,6 @@ namespace MangaWorld.Models
 		
 		private EntitySet<HINHANH> _HINHANHs;
 		
-		private EntityRef<TRUYEN1> _TRUYEN1;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -176,7 +182,6 @@ namespace MangaWorld.Models
 		public CHAP()
 		{
 			this._HINHANHs = new EntitySet<HINHANH>(new Action<HINHANH>(this.attach_HINHANHs), new Action<HINHANH>(this.detach_HINHANHs));
-			this._TRUYEN1 = default(EntityRef<TRUYEN1>);
 			OnCreated();
 		}
 		
@@ -251,10 +256,6 @@ namespace MangaWorld.Models
 			{
 				if ((this._MaTruyen != value))
 				{
-					if (this._TRUYEN1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMaTruyenChanging(value);
 					this.SendPropertyChanging();
 					this._MaTruyen = value;
@@ -294,40 +295,6 @@ namespace MangaWorld.Models
 			set
 			{
 				this._HINHANHs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TRUYEN1_CHAP", Storage="_TRUYEN1", ThisKey="MaTruyen", OtherKey="MaTruyen", IsForeignKey=true)]
-		public TRUYEN1 TRUYEN1
-		{
-			get
-			{
-				return this._TRUYEN1.Entity;
-			}
-			set
-			{
-				TRUYEN1 previousValue = this._TRUYEN1.Entity;
-				if (((previousValue != value) 
-							|| (this._TRUYEN1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TRUYEN1.Entity = null;
-						previousValue.CHAPs.Remove(this);
-					}
-					this._TRUYEN1.Entity = value;
-					if ((value != null))
-					{
-						value.CHAPs.Add(this);
-						this._MaTruyen = value.MaTruyen;
-					}
-					else
-					{
-						this._MaTruyen = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TRUYEN1");
-				}
 			}
 		}
 		
@@ -573,8 +540,6 @@ namespace MangaWorld.Models
 		
 		private string _TenTL;
 		
-		private EntitySet<TRUYEN1> _TRUYEN1s;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -587,7 +552,6 @@ namespace MangaWorld.Models
 		
 		public THELOAI()
 		{
-			this._TRUYEN1s = new EntitySet<TRUYEN1>(new Action<TRUYEN1>(this.attach_TRUYEN1s), new Action<TRUYEN1>(this.detach_TRUYEN1s));
 			OnCreated();
 		}
 		
@@ -631,19 +595,6 @@ namespace MangaWorld.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="THELOAI_TRUYEN1", Storage="_TRUYEN1s", ThisKey="MaTL", OtherKey="MaTL")]
-		public EntitySet<TRUYEN1> TRUYEN1s
-		{
-			get
-			{
-				return this._TRUYEN1s;
-			}
-			set
-			{
-				this._TRUYEN1s.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -663,18 +614,6 @@ namespace MangaWorld.Models
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_TRUYEN1s(TRUYEN1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.THELOAI = this;
-		}
-		
-		private void detach_TRUYEN1s(TRUYEN1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.THELOAI = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TINHTRANG")]
@@ -687,7 +626,7 @@ namespace MangaWorld.Models
 		
 		private string _TenTinhTrang;
 		
-		private EntitySet<TRUYEN1> _TRUYEN1s;
+		private EntitySet<TRUYEN> _TRUYENs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -701,7 +640,7 @@ namespace MangaWorld.Models
 		
 		public TINHTRANG()
 		{
-			this._TRUYEN1s = new EntitySet<TRUYEN1>(new Action<TRUYEN1>(this.attach_TRUYEN1s), new Action<TRUYEN1>(this.detach_TRUYEN1s));
+			this._TRUYENs = new EntitySet<TRUYEN>(new Action<TRUYEN>(this.attach_TRUYENs), new Action<TRUYEN>(this.detach_TRUYENs));
 			OnCreated();
 		}
 		
@@ -745,16 +684,16 @@ namespace MangaWorld.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TINHTRANG_TRUYEN1", Storage="_TRUYEN1s", ThisKey="MaTinhTrang", OtherKey="MaTinhTrang")]
-		public EntitySet<TRUYEN1> TRUYEN1s
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TINHTRANG_TRUYEN", Storage="_TRUYENs", ThisKey="MaTinhTrang", OtherKey="MaTinhTrang")]
+		public EntitySet<TRUYEN> TRUYENs
 		{
 			get
 			{
-				return this._TRUYEN1s;
+				return this._TRUYENs;
 			}
 			set
 			{
-				this._TRUYEN1s.Assign(value);
+				this._TRUYENs.Assign(value);
 			}
 		}
 		
@@ -778,13 +717,13 @@ namespace MangaWorld.Models
 			}
 		}
 		
-		private void attach_TRUYEN1s(TRUYEN1 entity)
+		private void attach_TRUYENs(TRUYEN entity)
 		{
 			this.SendPropertyChanging();
 			entity.TINHTRANG = this;
 		}
 		
-		private void detach_TRUYEN1s(TRUYEN1 entity)
+		private void detach_TRUYENs(TRUYEN entity)
 		{
 			this.SendPropertyChanging();
 			entity.TINHTRANG = null;
@@ -1036,8 +975,53 @@ namespace MangaWorld.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MaMANGA")]
+	public partial class MaMANGA
+	{
+		
+		private int _MaTruyen;
+		
+		private int _MaTL;
+		
+		public MaMANGA()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTruyen", DbType="Int NOT NULL")]
+		public int MaTruyen
+		{
+			get
+			{
+				return this._MaTruyen;
+			}
+			set
+			{
+				if ((this._MaTruyen != value))
+				{
+					this._MaTruyen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTL", DbType="Int NOT NULL")]
+		public int MaTL
+		{
+			get
+			{
+				return this._MaTL;
+			}
+			set
+			{
+				if ((this._MaTL != value))
+				{
+					this._MaTL = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TRUYEN")]
-	public partial class TRUYEN1 : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class TRUYEN : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1052,13 +1036,7 @@ namespace MangaWorld.Models
 		
 		private System.Nullable<System.DateTime> _NgayCapNhat;
 		
-		private System.Nullable<int> _MaTL;
-		
 		private System.Nullable<int> _MaTinhTrang;
-		
-		private EntitySet<CHAP> _CHAPs;
-		
-		private EntityRef<THELOAI> _THELOAI;
 		
 		private EntityRef<TINHTRANG> _TINHTRANG;
 		
@@ -1076,16 +1054,12 @@ namespace MangaWorld.Models
     partial void OnAnhbiaChanged();
     partial void OnNgayCapNhatChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayCapNhatChanged();
-    partial void OnMaTLChanging(System.Nullable<int> value);
-    partial void OnMaTLChanged();
     partial void OnMaTinhTrangChanging(System.Nullable<int> value);
     partial void OnMaTinhTrangChanged();
     #endregion
 		
-		public TRUYEN1()
+		public TRUYEN()
 		{
-			this._CHAPs = new EntitySet<CHAP>(new Action<CHAP>(this.attach_CHAPs), new Action<CHAP>(this.detach_CHAPs));
-			this._THELOAI = default(EntityRef<THELOAI>);
 			this._TINHTRANG = default(EntityRef<TINHTRANG>);
 			OnCreated();
 		}
@@ -1190,30 +1164,6 @@ namespace MangaWorld.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTL", DbType="Int")]
-		public System.Nullable<int> MaTL
-		{
-			get
-			{
-				return this._MaTL;
-			}
-			set
-			{
-				if ((this._MaTL != value))
-				{
-					if (this._THELOAI.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaTLChanging(value);
-					this.SendPropertyChanging();
-					this._MaTL = value;
-					this.SendPropertyChanged("MaTL");
-					this.OnMaTLChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinhTrang", DbType="Int")]
 		public System.Nullable<int> MaTinhTrang
 		{
@@ -1238,54 +1188,7 @@ namespace MangaWorld.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TRUYEN1_CHAP", Storage="_CHAPs", ThisKey="MaTruyen", OtherKey="MaTruyen")]
-		public EntitySet<CHAP> CHAPs
-		{
-			get
-			{
-				return this._CHAPs;
-			}
-			set
-			{
-				this._CHAPs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="THELOAI_TRUYEN1", Storage="_THELOAI", ThisKey="MaTL", OtherKey="MaTL", IsForeignKey=true)]
-		public THELOAI THELOAI
-		{
-			get
-			{
-				return this._THELOAI.Entity;
-			}
-			set
-			{
-				THELOAI previousValue = this._THELOAI.Entity;
-				if (((previousValue != value) 
-							|| (this._THELOAI.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._THELOAI.Entity = null;
-						previousValue.TRUYEN1s.Remove(this);
-					}
-					this._THELOAI.Entity = value;
-					if ((value != null))
-					{
-						value.TRUYEN1s.Add(this);
-						this._MaTL = value.MaTL;
-					}
-					else
-					{
-						this._MaTL = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("THELOAI");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TINHTRANG_TRUYEN1", Storage="_TINHTRANG", ThisKey="MaTinhTrang", OtherKey="MaTinhTrang", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TINHTRANG_TRUYEN", Storage="_TINHTRANG", ThisKey="MaTinhTrang", OtherKey="MaTinhTrang", IsForeignKey=true)]
 		public TINHTRANG TINHTRANG
 		{
 			get
@@ -1302,12 +1205,12 @@ namespace MangaWorld.Models
 					if ((previousValue != null))
 					{
 						this._TINHTRANG.Entity = null;
-						previousValue.TRUYEN1s.Remove(this);
+						previousValue.TRUYENs.Remove(this);
 					}
 					this._TINHTRANG.Entity = value;
 					if ((value != null))
 					{
-						value.TRUYEN1s.Add(this);
+						value.TRUYENs.Add(this);
 						this._MaTinhTrang = value.MaTinhTrang;
 					}
 					else
@@ -1337,18 +1240,6 @@ namespace MangaWorld.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_CHAPs(CHAP entity)
-		{
-			this.SendPropertyChanging();
-			entity.TRUYEN1 = this;
-		}
-		
-		private void detach_CHAPs(CHAP entity)
-		{
-			this.SendPropertyChanging();
-			entity.TRUYEN1 = null;
 		}
 	}
 }

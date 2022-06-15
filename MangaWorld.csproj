@@ -219,6 +219,8 @@
     <Content Include="Views\Body\Truyentheotheloai.cshtml" />
     <Content Include="Views\Body\Index.cshtml" />
     <Content Include="Views\Body\Truyentheotinhtrang.cshtml" />
+    <Content Include="Views\Body\Search.cshtml" />
+    <Content Include="Views\Body\Mota.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

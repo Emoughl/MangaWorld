@@ -1108,7 +1108,7 @@ footer {
             }
 
     .header-search-container {
-        min-width: 300px;
+        min-width: 700px;
     }
 
 
@@ -1961,4 +1961,9 @@ footer {
         left: 110px;
         max-width: 460px;
     }
+}
+
+.social-link ion-icon {
+  font-size: 20px;
+
 }

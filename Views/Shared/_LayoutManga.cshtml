@@ -21,7 +21,7 @@
 
             <div class="container">
 
-                <ul class="header-social-container">
+                <ul class="header-social-container" style=" margin-left: -150px">
 
                     <li>
                         <a href="#" class="social-link">
@@ -58,7 +58,7 @@
 
                 <div class="header-top-actions">
 
-                    <select name="language">
+                    <select name="language" style="margin-right: -200px">
 
                         <option value="en-US">English</option>
                         <option value="es-ES">Vietnamese</option>
@@ -79,16 +79,16 @@
                     <img src="~/images/Logo.jpg"
                          alt="MangaWorld-logo" width="50" height="40">
                 </a>
+                @using (Html.BeginForm("Search", "Body"))
+                {
+                    <div class="header-search-container">
+                        <input type="search" name="a" class="search-field" placeholder="Tìm Truyện...">
 
-                <div class="header-search-container">
-
-                    <input type="search" name="search" class="search-field" placeholder="Tìm Truyện...">
-
-                    <button class="search-btn">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </button>
-
-                </div>
+                        <button class="search-btn" type="submit">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </button>
+                    </div>
+                }
 
                 <div class="header-user-actions">
 
@@ -287,7 +287,24 @@
             </li>
 
             <li class="menu-category">
-                <a href="#" class="menu-title">Tìm Truyện</a>
+                <a href="#" class="menu-title">Tình Trạng</a>
+                <ul class="dropdown-list">
+
+                    <li class="dropdown-item">
+                        <a href="/Body/Truyentheotinhtrang/1">Đang Cập Nhật</a>
+                    </li>
+
+                    <li class="dropdown-item">
+                        <a href="/Body/Truyentheotinhtrang/2">Hoàn Thành</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="/Body/Truyentheotinhtrang/3">One Chap</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="/Body/Truyentheotinhtrang/4">Drop</a>
+                    </li>
+
+                </ul>
             </li>
 
             <li class="menu-category">
@@ -402,9 +419,6 @@
                         </div>
 
             <!-- /.container -->
-
-            <div class="container">
-
                 <hr>
 
                 <!-- Footer -->
@@ -415,8 +429,6 @@
                         </div>
                     </div>
                 </footer>
-
-            </div>
             <!-- /.container -->
             <!-- jQuery -->
             <script src="~/Scripts/jquery.js"></script>

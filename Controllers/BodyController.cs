@@ -12,11 +12,7 @@ namespace MangaWorld.Controllers
     {
         MangaDataContext data = new MangaDataContext();
         // GET: Body
-        private List<TRUYEN> Laytruyenmoi(int count)
-        {
-            //Sắp xếp sách theo ngày cập nhật, sau đó lấy top @count 
-            return data.TRUYENs.OrderByDescending(a => a.NgayCapNhat).Take(count).ToList();
-        }
+
         public ActionResult Index(int ? page)
         {
             //kích thước trang = số mẫu tin cho 1 trang
@@ -24,8 +20,9 @@ namespace MangaWorld.Controllers
             //Số thứ tự trang: nêu page là null thì pagenum =1, ngược lại pagenum=page
             int pagenum = (page ?? 1);
             //Lấy top 5 Album bán chạy nhất
-            var truyenmoi = Laytruyenmoi(15);
-            return View(truyenmoi.ToPagedList(pagenum, pagesize));
+            // var truyenmoi = Laytruyenmoi(15);
+            //  return View(truyenmoi.ToPagedList(pagenum, pagesize));
+            return View();
         }
         public ActionResult Theloai()
         {
@@ -39,15 +36,31 @@ namespace MangaWorld.Controllers
         }
         public ActionResult Truyentheotheloai(int id)
         {
-            var truyen= from t in data.TRUYENs where t.MaTL== id select t;
+            var truyen = from t in data.TRUYENs
+                         join tl in data.MaMANGAs on t.MaTruyen equals tl.MaTruyen
+                         where tl.MaTL == id
+                         select t;
             return View(truyen);
 
         }
         public ActionResult Truyentheotinhtrang(int id)
         {
-            var truyen = from tg in data.TRUYENs where tg.MaTinhtrang == id select tg;
+            var truyen = from tg in data.TRUYENs where tg.MaTinhTrang == id select tg;
             return View(truyen);
 
+        }
+
+        [HttpPost]
+        public ActionResult Search(String a)
+        {
+            var truyen = data.TRUYENs.Where(s => s.TenTruyen.Contains(a)).ToList();
+           
+            return View(truyen);
+        }
+        public ActionResult Mota(int k)
+        {
+            var truyen = from mt in data.TRUYENs where mt.MaTruyen == k select mt.Mota;
+            return View (truyen);
         }
     }
 }
